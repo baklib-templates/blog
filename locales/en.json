@@ -1,0 +1,52 @@
+{
+  "snippets": {
+    "feedback_form": {
+      "title": "Submit Feedback",
+      "message_label": "Message",
+      "message_placeholder": "Please enter your feedback",
+      "message_required": "Feedback cannot be empty",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "feedback_button": {
+      "title_posted": "Thank you for your feedback",
+      "title_unposted": "Submit Feedback"
+    }
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "All"
+      }
+    },
+    "page": {
+      "current_version": "Current",
+      "visit_count": "Visits"
+    }
+  },
+  "paginate": {
+    "showing": "currently showing",
+    "total": "total",
+    "records": "records",
+    "previous": "Previous Page",
+    "next": "Next Page"
+  },
+  "generic": {
+    "feedback_created_at": "Last Feedback At",
+    "empty": "No Data",
+    "all_tags": "All Tags",
+    "recent_updates": "Recent Updates",
+    "back_to_home": "Back to Home",
+    "copyright": "Copyright",
+    "submit": "Submit",
+    "placeholders": {
+      "search": "Search",
+      "input_feedback": "Please enter your feedback"
+    },
+    "buttons": {
+      "close": "Close",
+      "signout": "Sign Out",
+      "signin": "Sign In"
+    }
+  }
+}
