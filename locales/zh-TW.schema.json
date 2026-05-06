@@ -1,6 +1,6 @@
 {
-  "theme_label": "發布指南模版",
-  "theme_description": "小型CMS內容管理系統，用於構建如產品更新、公告發布、新聞、博客、日誌、常見問題等。",
+  "theme_label": "部落格、新聞、通知公告內容站點",
+  "theme_description": "小型 CMS 內容管理系統，用於建置部落格文章、新聞動態、通知公告等內容站點。",
   "templates": {
     "page": {
       "name": "文章頁面",
@@ -30,7 +30,7 @@
     "settings": {
       "slogan": {
         "label": "一句話描述",
-        "default": "歡迎查看產品發布指南"
+        "default": "歡迎閱讀最新文章、新聞與公告"
       },
       "company_name": {
         "label": "公司名稱",

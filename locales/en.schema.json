@@ -1,6 +1,6 @@
 {
-  "theme_label": "Release Guide Template",
-  "theme_description": "Small CMS content management system for building product updates, announcements, news, blogs, logs, FAQs, etc.",
+  "theme_label": "Blog / News / Announcements Site",
+  "theme_description": "A small CMS for building content sites with blog posts, news updates, and announcements.",
   "templates": {
     "page": {
       "name": "Article Page",
@@ -30,7 +30,7 @@
     "settings": {
       "slogan": {
         "label": "Slogan",
-        "default": "Welcome to Product Release Guide"
+        "default": "Read the latest posts, news, and announcements"
       },
       "company_name": {
         "label": "Company Name",

@@ -1,6 +1,6 @@
 {
-  "theme_label": "릴리스 가이드 템플릿",
-  "theme_description": "제품 업데이트, 공지사항, 뉴스, 블로그, 로그, FAQ 등을 구축하기 위한 소형 CMS 콘텐츠 관리 시스템.",
+  "theme_label": "블로그 · 뉴스 · 공지 사이트",
+  "theme_description": "블로그 글, 뉴스 업데이트, 공지사항을 구축하기 위한 소형 CMS 콘텐츠 관리 시스템.",
   "templates": {
     "page": {
       "name": "문서 페이지",
@@ -30,7 +30,7 @@
     "settings": {
       "slogan": {
         "label": "슬로건",
-        "default": "제품 릴리스 가이드에 오신 것을 환영합니다"
+        "default": "최신 글, 뉴스, 공지를 확인하세요"
       },
       "company_name": {
         "label": "회사명",

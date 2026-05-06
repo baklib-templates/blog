@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "guide",
+    "theme_name": "blog",
     "theme_label": "t:schema.theme_label",
     "theme_description": "t:schema.theme_description",
     "theme_version": "2.0.2",

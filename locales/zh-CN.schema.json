@@ -1,6 +1,6 @@
 {
-  "theme_label": "发布指南模版",
-  "theme_description": "小型CMS内容管理系统，用于构建如产品更新、公告发布、新闻、博客、日志、常见问题等。",
+  "theme_label": "博客、新闻、通知公告内容站点",
+  "theme_description": "小型 CMS 内容管理系统，用于构建博客文章、新闻动态、通知公告等内容站点。",
   "templates": {
     "page": {
       "name": "文章页面",
@@ -30,7 +30,7 @@
     "settings": {
       "slogan": {
         "label": "一句话描述",
-        "default": "欢迎查看产品发布指南"
+        "default": "欢迎阅读最新文章、新闻与公告"
       },
       "company_name": {
         "label": "公司名称",

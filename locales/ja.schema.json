@@ -1,6 +1,6 @@
 {
-  "theme_label": "リリースガイドテンプレート",
-  "theme_description": "製品アップデート、お知らせ、ニュース、ブログ、ログ、FAQなどを構築するための小型CMSコンテンツ管理システム。",
+  "theme_label": "ブログ・ニュース・お知らせサイト",
+  "theme_description": "ブログ記事、ニュース更新、通知/お知らせを構築できる小型 CMS コンテンツ管理システム。",
   "templates": {
     "page": {
       "name": "記事ページ",
@@ -30,7 +30,7 @@
     "settings": {
       "slogan": {
         "label": "キャッチフレーズ",
-        "default": "製品リリースガイドへようこそ"
+        "default": "最新の記事・ニュース・お知らせをお届けします"
       },
       "company_name": {
         "label": "会社名",
