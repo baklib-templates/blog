@@ -1,91 +1,99 @@
-<div class='overflow-visible p-2 mx-auto w-full max-w-5xl h-full sm:px-0'>
-  <div class='hidden my-2 md:block'>
-    {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
-  </div>
+<div class="flex-1 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
 
-  <div class="flex h-full md:space-x-2 lg:mx-0">
-    <div class="flex-1 flex flex-col h-full space-y-2 min-h-[calc(100vh-200px)]">
-      {% assign page_title = page.link_text | presence %}
-      {% assign page_thumb_image_url = page.settings.thumb_image_url | presence %}
-      {% assign page_description = page.settings.description | presence %}
-      {% assign page_content = page.settings.content | presence %}
+    {% assign page_title = page.link_text | presence %}
+    {% assign page_thumb_image_url = page.settings.thumb_image_url | presence %}
+    {% assign page_description = page.settings.description | presence %}
+    {% assign page_content = page.settings.content | presence %}
 
-      <article class="block p-4 break-all bg-white rounded-md shadow">
-        <div class="flex items-center space-x-2 text-xs font-light shrink-0">
+    <article class="mx-auto max-w-4xl">
+      <header class="mb-8 border-b border-slate-100 pb-8">
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 md:text-sm">
           {% for tag in page.settings.tags %}
-            <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2">
+            <a href="{{ tag.path }}" class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-200 md:text-sm">
               {{ tag.name }}
             </a>
           {% endfor %}
 
           {% assign version_count = page.versions | size %}
           {% if version_count > 0 %}
-            <ul class="flex space-x-1">
-          <li class="px-2 py-1 rounded-lg border hover:bg-teal-100"><a href="{{ page.path }}">{{'templates.page.current_version' | t }}</a></li>
+            <span class="text-slate-300">·</span>
+            <ul class="flex flex-wrap items-center gap-1">
+              <li>
+                <a href="{{ page.path }}" class="rounded-md border border-slate-200 px-2 py-0.5 text-slate-600 hover:bg-slate-50">{{ 'templates.page.current_version' | t }}</a>
+              </li>
               {% for version_page in page.versions %}
-                <li class="px-2 py-1 rounded-lg border hover:bg-teal-100"><a href="{{ version_page.path | append: '?version=' |  append: version_page.name }}">{{ version_page.name }}</a></li>
+                <li>
+                  <a href="{{ version_page.path | append: '?version=' | append: version_page.name }}" class="rounded-md border border-slate-200 px-2 py-0.5 text-slate-600 hover:bg-slate-50">{{ version_page.name }}</a>
+                </li>
               {% endfor %}
             </ul>
           {% endif %}
-          {%- if page.published_at -%}
-            <div class="flex items-center space-x-1 text-gray-400">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M7 3V1H9V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V9H20V5H17V7H15V5H9V7H7V5H4V19H10V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7ZM17 12C14.7909 12 13 13.7909 13 16C13 18.2091 14.7909 20 17 20C19.2091 20 21 18.2091 21 16C21 13.7909 19.2091 12 17 12ZM11 16C11 12.6863 13.6863 10 17 10C20.3137 10 23 12.6863 23 16C23 19.3137 20.3137 22 17 22C13.6863 22 11 19.3137 11 16ZM16 13V16.4142L18.2929 18.7071L19.7071 17.2929L18 15.5858V13H16Z"></path></svg>
-              <span class="flex justify-center items-center font-mono text-xs">{{ page.published_at | date: "%Y-%m-%d" }}</span>
-            </div>
-          {%- endif -%}
-          {% comment %} 是否显示访问量 {% endcomment %}
+
+          {% if page.published_at %}
+            <span class="text-slate-300">·</span>
+            <time datetime="{{ page.published_at | date: '%Y-%m-%d' }}" class="inline-flex items-center gap-1 font-mono text-slate-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" aria-hidden="true">
+                <path d="M7 3V1H9V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V9H20V5H17V7H15V5H9V7H7V5H4V19H10V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7ZM17 12C14.7909 12 13 13.7909 13 16C13 18.2091 14.7909 20 17 20C19.2091 20 21 18.2091 21 16C21 13.7909 19.2091 12 17 12ZM11 16C11 12.6863 13.6863 10 17 10C20.3137 10 23 12.6863 23 16C23 19.3137 20.3137 22 17 22C13.6863 22 11 19.3137 11 16ZM16 13V16.4142L18.2929 18.7071L19.7071 17.2929L18 15.5858V13H16Z" />
+              </svg>
+              {{ page.published_at | date: "%Y-%m-%d" }}
+            </time>
+          {% endif %}
+
           {% if site.settings.is_show_visit_count %}
-            <span class="flex justify-center items-center font-mono text-xs font-normal text-gray-400"> · {{ page.visits_count }} {{ '
-            templates.page.visit_count' | t: 'Visits' }} </span>
+            <span class="text-slate-300">·</span>
+            <span class="font-mono text-slate-500">{{ page.visits_count }} {{ 'templates.page.visit_count' | t }}</span>
           {% endif %}
         </div>
-        <h2 class="my-5 text-2xl font-bold leading-10 md:text-4xl text-slate-800">
+
+        <h1 class="mt-6 text-3xl font-semibold leading-tight tracking-tight text-slate-900 md:text-4xl md:leading-tight">
           {{ page_title }}
-        </h2>
-        {% if page_thumb_image_url %}
-          <div class="overflow-hidden rounded-lg bg-primary/8 md:max-h-[40vh] mb-2">
-            <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page_thumb_image_url }}" />
-          </div>
-        {% endif %}
-        {% if page_description %}
-          <p class="p-4 my-4 rounded-lg border-l-4 border-primary text-slate-700 bg-primary/8">{{ page_description }}</p>
-        {% endif  %}
+        </h1>
+      </header>
 
-        <div class="overflow-auto max-w-full">
-          <div class="ProseMirror prose sm:prose-base lg:prose-lg focus:outline-none">
-            {{ page_content }}
-          </div>
+      {% if page_thumb_image_url %}
+        <div class="mb-10 overflow-hidden rounded-xl border border-slate-100 bg-slate-50 md:max-h-[min(50vh,480px)]">
+          <img src="{{ page_thumb_image_url }}" alt="" class="w-full object-cover" loading="eager" />
         </div>
-      </article>
-
-      {%- assign sub_pages_count = page.children_in_list | size -%}
-      {% if sub_pages_count > 0 %}
-        <ul role="list" class="space-y-2">
-          {% paginate_tag page.children_in_list, as: 'pages' %}
-            {% for page in pages %}
-              {% render 'card', page: page %}
-            {% else %}
-              <div class="flex justify-center py-24 text-sm bg-white rounded-lg">{{ 'generic.empty' | t }}</div>
-            {% endfor %}
-            {% render 'paginate', paginate: paginate %}
-          {% endpaginate_tag %}
-        </ul>
       {% endif %}
 
-      <section class="my-8">
-        {% render 'feedback_button', page: page %}
+      {% if page_description %}
+        <p class="mb-4 rounded-xl border-l-4 border-slate-900 bg-slate-50 px-5 py-4 text-base leading-relaxed text-slate-700">{{ page_description }}</p>
+      {% endif %}
+
+      <div class="max-w-full overflow-x-auto">
+        <div class="ProseMirror prose max-w-none text-slate-700 sm:prose-base lg:prose-lg focus:outline-none [&_a]:font-medium [&_a]:text-slate-900 [&_a]:underline-offset-2 [&_h1,&_h2,&_h3,&_h4]:text-slate-900">
+          {{ page_content }}
+        </div>
+      </div>
+    </article>
+
+    {% assign sub_pages_count = page.children_in_list | size %}
+    {% if sub_pages_count > 0 %}
+      <section class="mx-auto mt-16 max-w-7xl border-t border-slate-100 pt-14">
+        <h2 class="mb-8 text-lg font-semibold text-slate-900">{{ 'generic.recent_updates' | t }}</h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {% paginate_tag page.children_in_list, as: 'child_pages', per: 6 %}
+            {% for child in child_pages %}
+              {% render 'card_grid', page: child %}
+            {% else %}
+              <div class="col-span-full py-12 text-center text-sm text-slate-500">{{ 'generic.empty' | t }}</div>
+            {% endfor %}
+            {% if paginate.total_count > 0 %}
+              <div class="col-span-full mt-6 flex justify-center">
+                {% render 'paginate', paginate: paginate %}
+              </div>
+            {% endif %}
+          {% endpaginate_tag %}
+        </div>
       </section>
-    </div>
+    {% endif %}
 
-    <!-- Sidebar Section -->
-    <aside class="hidden w-64 pl-4 sm:block shrink-0 sticky top-[74px] h-fit">
-      {% render 'sidebar', site: site %}
-    </aside>
+    <section class="mx-auto mt-14 max-w-4xl border-t border-slate-100 pt-10">
+      {% render 'feedback_button', page: page %}
+    </section>
   </div>
-
 </div>
-
-
 
 {% schema %}
   {

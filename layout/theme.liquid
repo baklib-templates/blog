@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth bg-primary" lang="{{ site.language }}">
+<html class="scroll-smooth bg-white" lang="{{ site.language }}">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Baklib">
@@ -12,17 +12,15 @@
     {%# TIPS：在低代码平台开发时，请打开下一行代码注释 %}
     {% if false %} {{ 'javascripts/cdn.tailwindcss.js' | asset_url | script_tag: data-turbo-track: 'reload' }} {% endif %}
     {{ site.settings.head_html }}
-
-    {% weixin_share_tag app_id: site.settings.weixin_app_id, app_secret: site.settings.weixin_app_secret, debug: site.settings.weixin_debug, enabled: site.settings.weixin_enabled %}
   </head>
-  <body id="js--body" class="flex flex-col min-h-screen antialiased text-slate-600 bg-primary">
+  <body id="js--body" class="flex min-h-screen flex-col bg-slate-50 antialiased text-slate-600">
     <div class="flex-0">
       {% if site.settings.is_allow_header %}
         {% render 'header' %}
       {% endif %}
     </div>
 
-    <main class="flex relative flex-col flex-1 min-h-0 bg-slate-100">
+    <main class="relative flex min-h-0 flex-1 flex-col bg-slate-50">
       {{ content_for_layout }}
     </main>
 

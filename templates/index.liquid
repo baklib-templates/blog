@@ -1,33 +1,43 @@
-{% assign sort_rule = site.settings.sort_rule.value %}
-{% assign pages = site.pages['/'].children_in_list | order_by: sort_rule %}
+{% assign sort_mode = params.sort | default: 'published_desc' %}
+{% unless sort_mode == 'published_asc' %}
+  {% assign sort_mode = 'published_desc' %}
+{% endunless %}
 
-<div id="screen" class="bg-primary bg-gradient-to-r from-white/20 md:to-black/20 h-[180px] absolute -top-[24px] left-0 w-full z-0"></div>
+{% case sort_mode %}
+  {% when 'published_asc' %}
+    {% assign sort_field = 'published_at' %}
+  {% else %}
+    {% assign sort_field = '-published_at' %}
+{% endcase %}
 
-<div class="overflow-visible w-full max-w-5xl mx-auto h-full p-2 sm:px-0 flex flex-col sm:flex-row sm:space-x-2">
-  <div class="w-full space-y-2 lg:space-y-4">
-    {% paginate_tag pages, per: 6 %}
-      {% for page in pages %}
-        {% render "card", page: page %}
-      {% else %}
-        {{ 'generic.empty' | t }}
-      {% endfor %}
+{% assign pages = site.pages['/'].children_in_list | order_by: sort_field %}
 
-      <div class='flex justify-center'>
-        {% render 'paginate', paginate: paginate %}
+<div class="flex-1 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    {% render 'news_toolbar', sort_base: site.index_path, sort_mode: sort_mode %}
+
+    {% paginate_tag pages, per: 9 %}
+      <div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        {% for article in pages %}
+          {% render 'card_grid', page: article %}
+        {% else %}
+          <div class="col-span-full py-24 text-center text-sm text-slate-500">{{ 'generic.empty' | t }}</div>
+        {% endfor %}
       </div>
+
+      {% if paginate.total_count > 0 %}
+        <div class="mt-14 flex justify-center border-t border-slate-100 pt-10">
+          {% render 'paginate', paginate: paginate %}
+        </div>
+      {% endif %}
     {% endpaginate_tag %}
   </div>
-
-  <!-- Sidebar Section -->
-  <aside class="hidden w-64 pl-4 sm:block shrink-0 sticky top-[74px] h-fit">
-    {% render 'sidebar', site: site %}
-  </aside>
 </div>
 
 {% schema %}
   {
-    "name": "Index",
-    "description": "Card Style",
+    "name": "t:schema.templates.index_card.name",
+    "description": "t:schema.templates.index_card.description",
     "thumb_url": "images/theme/index-card.png",
     "preview_image_urls": [
       "images/theme/index-card.png"

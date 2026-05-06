@@ -1,7 +1,7 @@
-<div class="drawer drawer-end w-[40px] items-end md:hidden">
+<div class="drawer drawer-end ml-auto flex w-10 shrink-0 items-center justify-end md:hidden">
   <input id="header-drawer-right" type="checkbox" class="drawer-toggle" x-init="$el.checked = false;" />
   <div class="drawer-content">
-    <label for="header-drawer-right" class="drawer-button btn btn-ghost">
+    <label for="header-drawer-right" class="drawer-button btn btn-ghost btn-square text-slate-700 hover:bg-slate-100">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -19,7 +19,7 @@
   <div class="drawer-side">
     <label
       for="header-drawer-right"
-      aria-label="close sidebar"
+      aria-label="{{ 'generic.accessibility.close_sidebar' | t }}"
       class="drawer-overlay"
     ></label>
     <div class="bg-base-200 text-base-content min-h-full w-80 p-4">

@@ -1,5 +1,5 @@
 {
-  "theme_label": "博客、新闻、通知公告内容站点",
+  "theme_label": "Blog",
   "theme_description": "小型 CMS 内容管理系统，用于构建博客文章、新闻动态、通知公告等内容站点。",
   "templates": {
     "page": {
@@ -23,24 +23,19 @@
           "label": "页面内容"
         }
       }
+    },
+    "index_list": {
+      "name": "首页（列表）",
+      "description": "列表样式首页，含搜索与标签筛选。"
+    },
+    "index_card": {
+      "name": "首页（卡片）",
+      "description": "卡片网格样式首页，支持按发布时间排序。"
     }
   },
   "generic": {
     "name": "通用设置",
     "settings": {
-      "slogan": {
-        "label": "一句话描述",
-        "default": "欢迎阅读最新文章、新闻与公告"
-      },
-      "company_name": {
-        "label": "公司名称",
-        "default": "Baklib.cn",
-        "info": "显示在页面底部页脚位置"
-      },
-      "copyright_info": {
-        "label": "备案/版权信息",
-        "placeholder": "蜀ICP备15035023号"
-      },
       "is_allow_feedback": {
         "label": "是否展示用户反馈"
       },
@@ -84,27 +79,6 @@
         "label": "底部区域插入 HTML 代码",
         "info": "支持HTML标签和有限的TailwindCSS样式代码",
         "placeholder": "通常在这里插入公司其他网站的外部导航链接、友情链接、SEO 优化链接等"
-      }
-    }
-  },
-  "settings": {
-    "weixin_share": {
-      "title": "微信配置",
-      "weixin_app_id": {
-        "label": "开发者ID(AppID)",
-        "info": "<a href='https://mp.weixin.qq.com/cgi-bin/frame'>微信公众号/设置与开发/开发接口管理</a>中获取 "
-      },
-      "weixin_app_secret": {
-        "label": "开发者密码(AppSecret)",
-        "info": ""
-      },
-      "weixin_enabled": {
-        "label": "是否启用微信分享",
-        "info": "提供站点页面微信分享的能力</br>1. 请在微信公众号中配置ip白名单（ip: ${service_ip}）, 配置后将有一段时间的生效延迟。</br>2. 检查是否开启微信分享权限，微信公众号/设置与开发/开发接口管理: <a href='https://mp.weixin.qq.com/cgi-bin/frame'>网页服务/分享接口</a>。</br>3. 分享链接是否为卡片：从卡片形式进入分享卡片形式，链接形式进入分享链接形式；网页初始链接分享可由公司的服务号中或收藏后进行卡片分享（此规则为微信分享限制）。"
-      },
-      "weixin_debug": {
-        "label": "是否开启debug提示",
-        "info": "请仅在配置阶段开启此选项；开启后在访问前端站点时若未正确配置微信分享将自动提示错误信息"
       }
     }
   }

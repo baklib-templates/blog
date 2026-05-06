@@ -1,98 +1,94 @@
-# release guide 模板
+# Baklib CMS — Blog theme
 
-## 介绍
+A lightweight **blog / news / announcements** theme for Baklib-powered sites. It ships with two home layouts (card grid and list), article pages with tags and optional feedback, search, and Tailwind CSS–based styling.
 
-## 开发
+Default **seed data is in English** (`site.language: en`) so new sites start with an international-friendly baseline. Switch the language in `seeds/001_site.yml` if you prefer another default.
 
-```shell
-# 安装 npm 包
-yarn install
-# 执行此命令，可在实时把 src 目录的 js/css 代码编译到 assets 目录
-yarn dev
+---
+
+## Features
+
+- **Home**: card grid (`templates/index.liquid`) or list (`templates/index.list.liquid`) with tag navigation and sorting (card layout).
+- **Article** (`templates/page.liquid`): title, summary, cover, rich content, tags, version links, optional visit count and feedback.
+- **Search** (`templates/search.liquid`), **tag listing** (`templates/tag.liquid`).
+- Theme settings in `config/settings_schema.json`; storefront copy in `locales/*.json`; editor labels in `locales/*.schema.json`.
+
+---
+
+## Requirements
+
+- **Node.js** 18+ recommended for building CSS/JS assets.
+
+Optional:
+
+- **Ruby + Bundler** if you use Guard for LiveReload (see below).
+
+---
+
+## Development
+
+Install dependencies and run watchers for Tailwind v4 and esbuild:
+
+```bash
+npm install
+npm run dev
 ```
 
+Production build:
 
-```shell
-# 安装 guard-livereload，浏览器安装 livereload 插件，可实现代码改动，浏览器页面自动刷新
+```bash
+npm run build
+```
+
+This compiles:
+
+- `src/stylesheets/application.css` → `assets/stylesheets/application.css`
+- `src/javascripts/application.js` → `assets/javascripts/application.js`
+
+The layout loads these from `layout/theme.liquid` via `asset_url` (plus shared Baklib assets).
+
+### LiveReload (optional)
+
+```bash
 bundle install
 bundle exec guard
 ```
 
-### 安装配置TailwindCSS
-[TailwindCSS官网](https://www.tailwindcss.cn/docs/installation)
+Use a browser LiveReload extension alongside Guard if you want automatic refresh.
 
-#### 1.安装Tailwindcss
-通过`npm`安装`tailwindcss`，然后创建`tailwind.config.js`配置文件
-```bash
-npm add -D tailwindcss
-npx tailwindcss init
-```
-#### 2.配置模板文件的路径和自定义样式
-```javascript
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./templates/**/*.liquid", "./snippets/**/*.liquid", "./layout/**/*.liquid", "./statics/**/*.liquid"],
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: () => {
-        return {
-          slate: {
-            150: "#E9EEF5"
-          },
-          ...["primary", "secondary", "accent", "info", "success", "warning", "error"].reduce((map, name) => {
-            return {
-              ...map,
-              [name]: {
-                DEFAULT: `hsl(var(--theme-color-${name}) / <alpha-value>)`,
-                lighten: `hsl(var(--theme-color-${name}-hsl-h) var(--theme-color-${name}-hsl-s) calc(var(--theme-color-${name}-hsl-l) + 15%))`,
-                darken: `hsl(var(--theme-color-${name}-hsl-h) var(--theme-color-${name}-hsl-s) calc(var(--theme-color-${name}-hsl-l) - 15%))`,
-                ...[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].reduce((map,lightness) => {
-                  return {
-                    ...map,
-                    [lightness]: `hsl(var(--theme-color-${name}-hsl-h) var(--theme-color-${name}-hsl-s) ${100 - lighten/10}%)`
-                  }
-                }, {})
-              }
-            }
-          }, {})
-        }
-      },
-      spacing: {
-        4.5: "1.125rem",
-        5.5: "1.375rem",
-        18: "4.5rem",
-      },
-    },
-  },
-  plugins: [],
-}
-```
-#### 3.引入Tailwindcss到css文件中
-例如：`./src/main.css`
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@config '../tailwind.config.js'
-```
-#### 4.在`package.json`中配置css编译路径
-```json
-"scripts": {
-  "build": "npm-run-all --parallel build:css build:js",
-  "build:css": "npx tailwindcss -i ./src/main.css -o ./assets/css/main.css",
-  ......
-  "dev": "npm-run-all --parallel 'build:css -- --watch' 'build:js -- --watch'"
-}
-```
-#### 5.在`theme.liquid`文件中引入css
-```html
-{{ 'css/main.css' | asset_url | stylesheet_tag: data-turbo-track: 'reload' }}
-```
+---
 
+## Repository layout
 
-## 编译&发布
+| Path | Purpose |
+|------|---------|
+| `templates/` | Page templates (`index`, `page`, `search`, `tag`, …) |
+| `snippets/` | Partials (header, footer, cards, pagination, …) |
+| `layout/` | `theme.liquid` site shell |
+| `config/settings_schema.json` | Theme settings schema |
+| `locales/` | UI strings (`*.json`) and schema translations (`*.schema.json`) |
+| `seeds/` | Sample site and pages (default **English**) |
+| `assets/` | Built CSS/JS (committed or produced by `npm run build`) |
+| `src/` | Source for Tailwind and JS |
 
-```bash
-bun run build
-```
+---
+
+## Seeds and first-time content
+
+- `seeds/001_site.yml` — site language (`en` by default), header/footer HTML snippets.
+- `seeds/002_pages.yml` — home copy and three demo articles.
+
+**Site tags** (`site.tags`) are not defined inside `settings_schema.json`. Create them with the Baklib API or admin, then attach tags to pages via each template’s tag picker. See [API docs](https://dev.baklib.cn/api) and [Liquid objects](https://dev.baklib.cn/guide/objects).
+
+---
+
+## Documentation
+
+- Themes: [help.baklib.cn/themes](https://help.baklib.cn/themes)
+- API: [dev.baklib.cn/api](https://dev.baklib.cn/api)
+
+---
+
+## Other languages
+
+- Simplified Chinese maintainer notes: [README.zh-CN.md](./README.zh-CN.md).

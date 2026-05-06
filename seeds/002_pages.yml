@@ -1,79 +1,78 @@
 pages:
-  # 首页设置 (index 页面)
+  # Home (index template)
   template_name: "index"
-  template_style: "card"
   settings:
-    title: "最新文章"
-    description: "汇总博客文章、新闻动态与通知公告，<br class=\"hidden sm:inline\"/>帮助你快速了解最近发生的重要事情"
+    title: "Latest posts"
+    description: "Blog posts, news, and announcements in one place.<br class=\"hidden sm:inline\"/>Stay on top of what matters."
 
-  # 子页面（文章/新闻/公告）
+  # Sample articles
   children:
-    - name: "如何写出一篇好文章：结构与写作清单"
+    - name: "How to write a strong post: structure and checklist"
       slug: "how-to-write-a-good-post"
       template_name: "page"
       settings:
-        title: "如何写出一篇好文章：结构与写作清单"
-        description: "从标题、导语到正文结构，一套适用于博客/资讯内容的写作清单。"
-        tags: ["博客"]
+        title: "How to write a strong post: structure and checklist"
+        description: "From headline to body—a practical structure and checklist for blog and news content."
+        tags: ["Blog"]
         thumb_image_url: "images/theme/page.png"
         content: |
-          <h2>推荐结构</h2>
+          <h2>Suggested structure</h2>
           <ol>
-            <li><strong>标题</strong>：明确主题与收益</li>
-            <li><strong>导语</strong>：用 1-2 句话交代背景与结论</li>
-            <li><strong>正文</strong>：按问题-方法-示例-注意事项展开</li>
-            <li><strong>结尾</strong>：总结要点，并给出下一步行动</li>
+            <li><strong>Headline</strong>: clear topic and reader benefit</li>
+            <li><strong>Lead</strong>: 1–2 sentences for context and takeaway</li>
+            <li><strong>Body</strong>: problem → approach → examples → caveats</li>
+            <li><strong>Close</strong>: recap key points and next steps</li>
           </ol>
 
-          <h2>写作清单</h2>
+          <h2>Checklist</h2>
           <ul>
-            <li>是否有清晰的受众与场景？</li>
-            <li>是否给出可复用的步骤或模板？</li>
-            <li>是否配有示意图/代码/截图（如适用）？</li>
-            <li>是否便于搜索与归档（标签、摘要、封面图）？</li>
+            <li>Is the audience and scenario explicit?</li>
+            <li>Are there reusable steps or templates?</li>
+            <li>Do you add visuals, code, or screenshots where helpful?</li>
+            <li>Is it easy to find later (tags, summary, cover image)?</li>
           </ul>
 
-    - name: "新闻：我们上线了新的内容频道"
+    - name: "News: new content channels are live"
       slug: "news-new-content-channels"
       template_name: "page"
       settings:
-        title: "新闻：我们上线了新的内容频道"
-        description: "新增“新闻”“公告”“博客”频道，内容分类更清晰，阅读体验更顺畅。"
-        tags: ["新闻"]
+        title: "News: new content channels are live"
+        description: "Dedicated channels for News, Announcements, and Blog—clearer taxonomy and a smoother read."
+        tags: ["News", "Announcement"]
         thumb_image_url: "images/theme/index-list.png"
         content: |
-          <h2>本次更新</h2>
+          <h2>What changed</h2>
           <ul>
-            <li>支持按标签筛选内容（博客/新闻/公告等）</li>
-            <li>首页默认展示最新内容，支持排序规则配置</li>
-            <li>更适合“内容站”的信息架构与导航入口</li>
+            <li>Filter content by tags (blog, news, announcements, and more)</li>
+            <li>The home page highlights the latest items; sorting rules are configurable</li>
+            <li>Information architecture tuned for content sites and navigation</li>
           </ul>
 
-          <h2>你可以怎么用</h2>
+          <h2>How to use it</h2>
           <ul>
-            <li>把产品动态放在“新闻”</li>
-            <li>把重要通知放在“公告”</li>
-            <li>把经验方法论沉淀为“博客文章”</li>
+            <li>Ship product updates under <strong>News</strong></li>
+            <li>Post critical notices under <strong>Announcements</strong></li>
+            <li>Turn playbooks and long-form tips into <strong>Blog</strong> articles</li>
           </ul>
 
-    - name: "通知公告：关于节假日服务时间调整"
+    - name: "Announcement: holiday support hours"
       slug: "announcement-holiday-support-hours"
       template_name: "page"
       settings:
-        title: "通知公告：关于节假日服务时间调整"
-        description: "节假日期间客服与工单响应时间安排说明。"
-        tags: ["公告", "通知"]
+        title: "Announcement: holiday support hours"
+        description: "Live chat and ticket response hours during public holidays."
+        tags: ["Announcement", "Notice"]
         thumb_image_url: "images/theme/release-guide.png"
         content: |
-          <h2>服务时间</h2>
-          <p>节假日期间，我们将调整在线支持时间为：<strong>10:00 - 18:00</strong>。</p>
+          <h2>Support hours</h2>
+          <p>During holidays, online support hours will be <strong>10:00 – 18:00</strong>.</p>
 
-          <h2>影响范围</h2>
+          <h2>Impact</h2>
           <ul>
-            <li>在线客服：响应可能略有延迟</li>
-            <li>工单系统：优先处理紧急问题</li>
-            <li>知识库：可正常访问与搜索</li>
+            <li>Live chat: responses may be slightly slower</li>
+            <li>Tickets: urgent issues are prioritized</li>
+            <li>Knowledge base: browse and search as usual</li>
           </ul>
 
-          <h2>联系我们</h2>
-          <p>如遇紧急问题，请通过站点底部的联系方式或工单系统提交。</p>
+          <h2>Contact</h2>
+          <p>For emergencies, reach us via the site footer or submit a ticket.</p>

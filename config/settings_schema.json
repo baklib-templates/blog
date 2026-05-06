@@ -8,8 +8,8 @@
     "theme_syntax_version": "v2",
     "theme_scope": "cms",
     "theme_author": "Baklib",
-    "theme_documentation_url": "https://help.baklib.cn/themes/release-guide",
-    "theme_support_url": "https://help.baklib.cn/themes/release-guide/settings",
+    "theme_documentation_url": "https://help.baklib.cn/themes",
+    "theme_support_url": "https://help.baklib.cn/themes",
     "theme_thumb_url": "images/theme/thumb.png",
     "theme_preview_images": [
       "images/theme/release-guide.png",
@@ -68,25 +68,6 @@
   {
     "name": "t:schema.generic.name",
     "settings": [
-      {
-        "id": "slogan",
-        "type": "text",
-        "label": "t:schema.generic.settings.slogan.label",
-        "default": "t:schema.generic.settings.slogan.default"
-      },
-      {
-        "id": "company_name",
-        "label": "t:schema.generic.settings.company_name.label",
-        "type": "text",
-        "default": "t:schema.generic.settings.company_name.default",
-        "info": "t:schema.generic.settings.company_name.info"
-      },
-      {
-        "id": "copyright_info",
-        "type": "text",
-        "label": "t:schema.generic.settings.copyright_info.label",
-        "placeholder": "t:schema.generic.settings.copyright_info.placeholder"
-      },
       {
         "id": "sort_rule",
         "type": "select",
@@ -154,37 +135,6 @@
         "info": "t:schema.custom_html.settings.footer_menu_html.info",
         "rows": 6,
         "placeholder": "t:schema.custom_html.settings.footer_menu_html.placeholder"
-      }
-    ]
-  },
-  {
-    "name": "t:schema.settings.weixin_share.title",
-    "settings": [
-      {
-        "id": "weixin_app_id",
-        "type": "text",
-        "label": "t:schema.settings.weixin_share.weixin_app_id.label",
-        "info": "t:schema.settings.weixin_share.weixin_app_id.info"
-      },
-      {
-        "id": "weixin_app_secret",
-        "type": "text",
-        "label": "t:schema.settings.weixin_share.weixin_app_secret.label",
-        "info": "t:schema.settings.weixin_share.weixin_app_secret.info"
-      },
-      {
-        "id": "weixin_enabled",
-        "type": "checkbox",
-        "label": "t:schema.settings.weixin_share.weixin_enabled.label",
-        "default": false,
-        "info": "t:schema.settings.weixin_share.weixin_enabled.info"
-      },
-      {
-        "id": "weixin_debug",
-        "type": "checkbox",
-        "label": "t:schema.settings.weixin_share.weixin_debug.label",
-        "default": false,
-        "info": "t:schema.settings.weixin_share.weixin_debug.info"
       }
     ]
   }
