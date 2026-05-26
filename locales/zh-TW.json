@@ -11,6 +11,22 @@
     "feedback_button": {
       "title_posted": "感謝您的回饋",
       "title_unposted": "提交回饋"
+    },
+    "page_tools": {
+      "copy_page_label": "Copy",
+      "copy_page_description": "Copy this page as Markdown for LLMs",
+      "ask_ai_label": "Ask",
+      "open_in_chatgpt": "Open in ChatGPT",
+      "open_in_claude": "Open in Claude",
+      "open_in_doubao": "Open in Doubao",
+      "open_in_deepseek": "Open in DeepSeek",
+      "ask_about_page": "Ask about this page",
+      "copy_mcp_label": "Copy MCP install command",
+      "copy_mcp_description": "Copy the npx command to install the MCP server",
+      "connect_to_cursor": "Connect to Cursor",
+      "connect_to_cursor_description": "Install MCP Server in Cursor",
+      "connect_to_vscode": "Connect to VS Code",
+      "connect_to_vscode_description": "Install MCP Server in VS Code"
     }
   },
   "templates": {
@@ -24,16 +40,23 @@
     },
     "page": {
       "current_version": "當前版本",
-      "visit_count": "訪問量"
+      "visit_count": "訪問量",
+      "llm_prompt_template": "Read the content at %{url} so I can ask questions about it.",
+      "llm_copying": "Copying...",
+      "llm_copied": "Copied"
     }
   },
   "generic": {
     "feedback_created_at": "上次回饋於",
     "empty": "暫無數據",
     "all_tags": "所有標籤",
+    "tags_page_description": "依標籤瀏覽站點內容，每個分類展示最新 4 篇。",
+    "view_more": "查看更多",
     "recent_updates": "最新更新",
     "recent_memo_note": "展示首頁列表中最近建立的 5 則內容（備忘頁）。",
     "back_to_home": "返回首頁",
+    "home": "首頁",
+    "breadcrumb_nav": "麵包屑導覽",
     "copyright": "版權所有",
     "submit": "提交",
     "placeholders": {

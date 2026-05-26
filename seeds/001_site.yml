@@ -10,12 +10,20 @@ site:
     # (see https://dev.baklib.cn/guide/objects).
 
     # Custom HTML (see settings_schema.json)
-    head_html: ""
+    head_html: "<!-- some scripts like google analytics -->"
     header_menu_html: |
       <a href="/" class="hover:underline">Home</a>
-      <a href="/#tags" class="hover:underline">Tags</a>
+      <a href="/s/tags" class="hover:underline">Tags</a>
+      <a href="/s/brand" class="hover:underline">Brand</a>
       <a href="/s/about" class="hover:underline">About</a>
     footer_menu_html: |
       <a href="/" class="text-white hover:underline">Back to site</a>
       <a href="/#privacy" class="text-white hover:underline">Privacy</a>
       <a href="/#terms" class="text-white hover:underline">Terms</a>
+
+# Home page template variables (index / index.list) — see snippets/_index_hero.liquid
+pages:
+  settings:
+    title: "Stories, updates, and ideas worth sharing"
+    description: "A lightweight blog and content site built with Baklib. Explore articles, browse by tag, and stay up to date."
+    hero_image_url: "images/theme/index-card.png"

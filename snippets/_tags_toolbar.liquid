@@ -1,0 +1,59 @@
+{% comment %}
+  News list toolbar: tag links (tag.path) on the left, publish-date sort on the right.
+  Params:
+  - sort_base: sort link base path (site.index_path on home, tag.path on tag pages)
+  - active_tag: current tag object; omit or nil on home
+  - sort_mode: published_desc | published_asc (set by template from params.sort)
+  - sort_controls: when false, hide sort controls (e.g. tag page pagination mismatch)
+{% endcomment %}
+
+{% assign sort_desc_url = sort_base | append: '?sort=published_desc' %}
+{% assign sort_asc_url = sort_base | append: '?sort=published_asc' %}
+
+<div class="mb-10 flex flex-col gap-4 border-b border-base-300 pb-6 sm:flex-row sm:items-center sm:justify-between">
+  <div class="-mx-1 min-w-0 flex-1 overflow-x-auto px-1">
+    <ul class="flex flex-nowrap items-center gap-2">
+      <li class="shrink-0">
+        {% unless active_tag %}
+          <span class="btn btn-sm inline-flex items-center gap-1.5 rounded-full btn-primary" aria-current="page">
+            {% render 'icon', name: 'layout-grid', class: 'size-3.5 shrink-0' %}
+            {{ 'templates.index.list.all' | t }}
+          </span>
+        {% else %}
+          <a href="{{ site.index_path }}" class="btn btn-sm inline-flex items-center gap-1.5 rounded-full btn-ghost">
+            {% render 'icon', name: 'layout-grid', class: 'size-3.5 shrink-0 opacity-70' %}
+            {{ 'templates.index.list.all' | t }}
+          </a>
+        {% endunless %}
+      </li>
+      {% for site_tag in site.tags %}
+        <li class="shrink-0">
+          {% if active_tag != blank and active_tag.path == site_tag.path %}
+            <span class="btn btn-sm inline-flex items-center gap-1.5 rounded-full btn-primary" aria-current="page">
+              {% render 'icon', name: 'tag', class: 'size-3.5 shrink-0' %}
+              {{ site_tag.name }}
+            </span>
+          {% else %}
+            <a href="{{ site_tag.path }}" class="btn btn-sm inline-flex items-center gap-1.5 rounded-full btn-ghost">
+              {% render 'icon', name: 'tag', class: 'size-3.5 shrink-0 opacity-70' %}
+              {{ site_tag.name }}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% unless sort_controls == false %}
+    <div class="flex shrink-0 flex-wrap items-center gap-2 text-sm">
+      <span class="text-base-content/60">{{ 'templates.index.sort_label' | t }}</span>
+      {% if sort_mode == 'published_asc' %}
+        <a href="{{ sort_desc_url }}" class="btn btn-sm rounded-full btn-ghost">{{ 'templates.index.sort_newest' | t }}</a>
+        <span class="btn btn-sm rounded-full btn-accent" aria-current="true">{{ 'templates.index.sort_oldest' | t }}</span>
+      {% else %}
+        <span class="btn btn-sm rounded-full btn-accent" aria-current="true">{{ 'templates.index.sort_newest' | t }}</span>
+        <a href="{{ sort_asc_url }}" class="btn btn-sm rounded-full btn-ghost">{{ 'templates.index.sort_oldest' | t }}</a>
+      {% endif %}
+    </div>
+  {% endunless %}
+</div>

@@ -11,6 +11,22 @@
     "feedback_button": {
       "title_posted": "ご意見ありがとうございます",
       "title_unposted": "フィードバックを送信"
+    },
+    "page_tools": {
+      "copy_page_label": "Copy",
+      "copy_page_description": "ページを Markdown 形式で LLM 向けにコピーします",
+      "ask_ai_label": "AI に聞く",
+      "open_in_chatgpt": "ChatGPT で開く",
+      "open_in_claude": "Claude で開く",
+      "open_in_doubao": "Doubao で開く",
+      "open_in_deepseek": "DeepSeek で開く",
+      "ask_about_page": "このページについて質問する",
+      "copy_mcp_label": "MCP インストールコマンドをコピー",
+      "copy_mcp_description": "MCP サーバーをインストールする npx コマンドをコピーします",
+      "connect_to_cursor": "Cursor に接続",
+      "connect_to_cursor_description": "Cursor に MCP サーバーをインストールします",
+      "connect_to_vscode": "VS Code に接続",
+      "connect_to_vscode_description": "VS Code に MCP サーバーをインストールします"
     }
   },
   "templates": {
@@ -24,16 +40,23 @@
     },
     "page": {
       "current_version": "現在のバージョン",
-      "visit_count": "アクセス数"
+      "visit_count": "アクセス数",
+      "llm_prompt_template": "%{url} の内容を読み込み、このページについて質問できるようにしてください。",
+      "llm_copying": "コピー中...",
+      "llm_copied": "コピーしました"
     }
   },
   "generic": {
     "feedback_created_at": "最終フィードバック日時",
     "empty": "データなし",
     "all_tags": "すべてのタグ",
+    "tags_page_description": "タグ別にコンテンツを閲覧できます。各セクションに最新 4 件を表示します。",
+    "view_more": "もっと見る",
     "recent_updates": "最新の更新",
     "recent_memo_note": "ホーム一覧から最新 5 件を表示します（メモ用ページ）。",
     "back_to_home": "ホームに戻る",
+    "home": "ホーム",
+    "breadcrumb_nav": "パンくずリスト",
     "copyright": "著作権",
     "submit": "送信",
     "placeholders": {

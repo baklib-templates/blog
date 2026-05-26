@@ -1,6 +1,17 @@
 {
   "theme_label": "블로그 · 뉴스 · 공지 사이트",
   "theme_description": "블로그 글, 뉴스 업데이트, 공지사항을 구축하기 위한 소형 CMS 콘텐츠 관리 시스템.",
+  "recommendations": {
+    "baklib": {
+      "name": "Baklib 브랜드"
+    },
+    "fashion": {
+      "name": "패션"
+    },
+    "old_school": {
+      "name": "레트로"
+    }
+  },
   "templates": {
     "page": {
       "name": "문서 페이지",
@@ -31,6 +42,21 @@
     "index_card": {
       "name": "홈(카드)",
       "description": "게시일 기준 정렬이 가능한 카드 그리드형 홈입니다."
+    },
+    "index_hero": {
+      "settings": {
+        "title": {
+          "label": "사이트 슬로건",
+          "info": "홈 Hero 영역에 표시되는 제목"
+        },
+        "description": {
+          "label": "사이트 설명",
+          "info": "슬로건 아래에 표시되는 짧은 소개"
+        },
+        "hero_image_url": {
+          "label": "Hero 배경 이미지"
+        }
+      }
     }
   },
   "generic": {

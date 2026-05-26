@@ -1,13 +1,17 @@
 import * as Turbo from "@hotwired/turbo"
-import Alpine from 'alpinejs'
-import collapse from '@alpinejs/collapse'
-import { Application } from "@hotwired/stimulus"
-import LoadMoreController from "./../controllers/load_more_controller"
+import Alpine from "alpinejs"
+import collapse from "@alpinejs/collapse"
+import { initLucideIcons } from "./lucide_icons"
+import "./../controllers"
 
 window.Alpine = Alpine
 Alpine.plugin(collapse)
 Alpine.start()
 
-import "./../controllers"
-const application = Application.start()
-application.register("load-more", LoadMoreController)
+document.addEventListener("turbo:load", initLucideIcons)
+document.addEventListener("turbo:frame-render", initLucideIcons)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initLucideIcons)
+} else {
+  initLucideIcons()
+}

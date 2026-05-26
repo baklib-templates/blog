@@ -1,6 +1,17 @@
 {
   "theme_label": "Blog",
   "theme_description": "A small CMS for building content sites with blog posts, news updates, and announcements.",
+  "recommendations": {
+    "baklib": {
+      "name": "Baklib Brand"
+    },
+    "fashion": {
+      "name": "Fashion"
+    },
+    "old_school": {
+      "name": "Retro"
+    }
+  },
   "templates": {
     "page": {
       "name": "Article Page",
@@ -31,6 +42,21 @@
     "index_card": {
       "name": "Home (cards)",
       "description": "Card grid home with sorting by publish date."
+    },
+    "index_hero": {
+      "settings": {
+        "title": {
+          "label": "Site tagline",
+          "info": "Headline shown in the home hero section"
+        },
+        "description": {
+          "label": "Site description",
+          "info": "Short intro text below the tagline in the hero section"
+        },
+        "hero_image_url": {
+          "label": "Hero background image"
+        }
+      }
     }
   },
   "generic": {

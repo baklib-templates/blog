@@ -1,6 +1,17 @@
 {
   "theme_label": "ブログ・ニュース・お知らせサイト",
   "theme_description": "ブログ記事、ニュース更新、通知/お知らせを構築できる小型 CMS コンテンツ管理システム。",
+  "recommendations": {
+    "baklib": {
+      "name": "Baklib ブランド"
+    },
+    "fashion": {
+      "name": "ファッション"
+    },
+    "old_school": {
+      "name": "レトロ"
+    }
+  },
   "templates": {
     "page": {
       "name": "記事ページ",
@@ -31,6 +42,21 @@
     "index_card": {
       "name": "ホーム（カード）",
       "description": "公開日時で並べ替え可能なカードグリッド型ホーム。"
+    },
+    "index_hero": {
+      "settings": {
+        "title": {
+          "label": "サイトのキャッチコピー",
+          "info": "ホーム Hero エリアに表示する見出し"
+        },
+        "description": {
+          "label": "サイトの説明",
+          "info": "キャッチコピー下に表示する短い紹介文"
+        },
+        "hero_image_url": {
+          "label": "Hero 背景画像"
+        }
+      }
     }
   },
   "generic": {

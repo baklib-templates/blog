@@ -1,6 +1,17 @@
 {
   "theme_label": "Blog",
   "theme_description": "小型 CMS 内容管理系统，用于构建博客文章、新闻动态、通知公告等内容站点。",
+  "recommendations": {
+    "baklib": {
+      "name": "Baklib 品牌色"
+    },
+    "fashion": {
+      "name": "时尚"
+    },
+    "old_school": {
+      "name": "复古"
+    }
+  },
   "templates": {
     "page": {
       "name": "文章页面",
@@ -31,6 +42,21 @@
     "index_card": {
       "name": "首页（卡片）",
       "description": "卡片网格样式首页，支持按发布时间排序。"
+    },
+    "index_hero": {
+      "settings": {
+        "title": {
+          "label": "站点口号",
+          "info": "显示在首页 Hero 区域的主标题"
+        },
+        "description": {
+          "label": "站点描述",
+          "info": "显示在口号下方的简短介绍"
+        },
+        "hero_image_url": {
+          "label": "Hero 背景图片"
+        }
+      }
     }
   },
   "generic": {

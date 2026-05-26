@@ -1,0 +1,44 @@
+{% comment %}
+  Home hero: page.settings title (tagline), description, hero_image_url.
+  Rendered on index_card and index_list templates.
+{% endcomment %}
+
+{% assign hero_title = page.settings.title | presence %}
+{% assign hero_description = page.settings.description | presence %}
+{% assign hero_image_url = page.settings.hero_image_url | presence %}
+
+{% if hero_title or hero_description or hero_image_url %}
+  <section class="relative overflow-hidden border-b border-base-300">
+    {% if hero_image_url %}
+      <div class="absolute inset-0" aria-hidden="true">
+        <img
+          src="{{ hero_image_url }}"
+          alt=""
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral/85 via-neutral/55 to-neutral/25"></div>
+      </div>
+    {% else %}
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary/15 via-base-200 to-base-100"
+        aria-hidden="true"
+      ></div>
+    {% endif %}
+
+    <div class="page-container relative py-14 sm:py-16 lg:py-20">
+      <div class="max-w-3xl">
+        {% if hero_title %}
+          <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl{% if hero_image_url %} text-neutral-content{% else %} text-base-content{% endif %}">
+            {{ hero_title }}
+          </h1>
+        {% endif %}
+        {% if hero_description %}
+          <p class="mt-4 text-base leading-relaxed sm:text-lg{% if hero_image_url %} text-neutral-content/85{% else %} text-base-content/70{% endif %}">
+            {{ hero_description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}

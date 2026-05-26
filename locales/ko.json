@@ -11,6 +11,22 @@
     "feedback_button": {
       "title_posted": "피드백을 보내주셔서 감사합니다",
       "title_unposted": "피드백 제출"
+    },
+    "page_tools": {
+      "copy_page_label": "Copy",
+      "copy_page_description": "Copy this page as Markdown for LLMs",
+      "ask_ai_label": "Ask",
+      "open_in_chatgpt": "Open in ChatGPT",
+      "open_in_claude": "Open in Claude",
+      "open_in_doubao": "Open in Doubao",
+      "open_in_deepseek": "Open in DeepSeek",
+      "ask_about_page": "Ask about this page",
+      "copy_mcp_label": "Copy MCP install command",
+      "copy_mcp_description": "Copy the npx command to install the MCP server",
+      "connect_to_cursor": "Connect to Cursor",
+      "connect_to_cursor_description": "Install MCP Server in Cursor",
+      "connect_to_vscode": "Connect to VS Code",
+      "connect_to_vscode_description": "Install MCP Server in VS Code"
     }
   },
   "templates": {
@@ -24,16 +40,23 @@
     },
     "page": {
       "current_version": "현재 버전",
-      "visit_count": "방문 수"
+      "visit_count": "방문 수",
+      "llm_prompt_template": "Read the content at %{url} so I can ask questions about it.",
+      "llm_copying": "Copying...",
+      "llm_copied": "Copied"
     }
   },
   "generic": {
     "feedback_created_at": "마지막 피드백 일시",
     "empty": "데이터 없음",
     "all_tags": "모든 태그",
+    "tags_page_description": "태그별로 콘텐츠를 둘러보세요. 각 섹션에 최신 4개를 표시합니다.",
+    "view_more": "더 보기",
     "recent_updates": "최근 업데이트",
     "recent_memo_note": "홈 목록에서 최신 5개 항목을 보여 줍니다(메모용 페이지).",
     "back_to_home": "홈으로 돌아가기",
+    "home": "홈",
+    "breadcrumb_nav": "경로",
     "copyright": "저작권",
     "submit": "제출",
     "placeholders": {

@@ -10,23 +10,25 @@
     {% assign sort_field = '-published_at' %}
 {% endcase %}
 
-{% assign pages = site.pages['/'].children_in_list | order_by: sort_field %}
+{% assign pages = site.pages['/'].pages_in_list | order_by: sort_field %}
 
-<div class="flex-1 bg-white">
-  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-    {% render 'news_toolbar', sort_base: site.index_path, sort_mode: sort_mode %}
+<div class="flex-1 bg-base-100">
+  {% render 'index_hero', page: page %}
+
+  <div class="page-container py-10 lg:py-14">
+    {% render 'tags_toolbar', sort_base: site.index_path, sort_mode: sort_mode %}
 
     {% paginate_tag pages, per: 9 %}
       <div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {% for article in pages %}
           {% render 'card_grid', page: article %}
         {% else %}
-          <div class="col-span-full py-24 text-center text-sm text-slate-500">{{ 'generic.empty' | t }}</div>
+          <div class="col-span-full py-24 text-center text-sm text-base-content/60">{{ 'generic.empty' | t }}</div>
         {% endfor %}
       </div>
 
       {% if paginate.total_count > 0 %}
-        <div class="mt-14 flex justify-center border-t border-slate-100 pt-10">
+        <div class="mt-14 flex justify-center border-t border-base-300 pt-10">
           {% render 'paginate', paginate: paginate %}
         </div>
       {% endif %}
@@ -42,6 +44,27 @@
     "preview_image_urls": [
       "images/theme/index-card.png"
     ],
-    "sub_page_templates": ["page"]
+    "sub_page_templates": ["page"],
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "t:schema.templates.index_hero.settings.title.label",
+        "info": "t:schema.templates.index_hero.settings.title.info"
+      },
+      {
+        "id": "description",
+        "type": "textarea",
+        "label": "t:schema.templates.index_hero.settings.description.label",
+        "info": "t:schema.templates.index_hero.settings.description.info"
+      },
+      {
+        "id": "hero_image_url",
+        "type": "image_picker",
+        "ratio": "21:9",
+        "width": 320,
+        "label": "t:schema.templates.index_hero.settings.hero_image_url.label"
+      }
+    ]
   }
 {% endschema %}

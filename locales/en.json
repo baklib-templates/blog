@@ -11,6 +11,22 @@
     "feedback_button": {
       "title_posted": "Thank you for your feedback",
       "title_unposted": "Submit Feedback"
+    },
+    "page_tools": {
+      "copy_page_label": "Copy",
+      "copy_page_description": "Copy this page as Markdown for LLMs",
+      "ask_ai_label": "Ask",
+      "open_in_chatgpt": "Open in ChatGPT",
+      "open_in_claude": "Open in Claude",
+      "open_in_doubao": "Open in Doubao",
+      "open_in_deepseek": "Open in DeepSeek",
+      "ask_about_page": "Ask about this page",
+      "copy_mcp_label": "Copy MCP install command",
+      "copy_mcp_description": "Copy the npx command to install the MCP server",
+      "connect_to_cursor": "Connect to Cursor",
+      "connect_to_cursor_description": "Install MCP Server in Cursor",
+      "connect_to_vscode": "Connect to VS Code",
+      "connect_to_vscode_description": "Install MCP Server in VS Code"
     }
   },
   "templates": {
@@ -24,7 +40,10 @@
     },
     "page": {
       "current_version": "Current",
-      "visit_count": "Visits"
+      "visit_count": "Visits",
+      "llm_prompt_template": "Read the content at %{url} so I can ask questions about it.",
+      "llm_copying": "Copying...",
+      "llm_copied": "Copied"
     }
   },
   "paginate": {
@@ -38,9 +57,13 @@
     "feedback_created_at": "Last Feedback At",
     "empty": "No Data",
     "all_tags": "All Tags",
+    "tags_page_description": "Browse content by tag. Each section shows the latest four posts.",
+    "view_more": "View more",
     "recent_updates": "Recent Updates",
     "recent_memo_note": "Showing the 5 latest items from the home listing (memo view).",
     "back_to_home": "Back to Home",
+    "home": "Home",
+    "breadcrumb_nav": "Breadcrumb",
     "copyright": "Copyright",
     "submit": "Submit",
     "placeholders": {
