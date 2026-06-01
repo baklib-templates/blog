@@ -1,20 +1,22 @@
 pages:
-  # Home (index template)
+  # Home (index template — card grid). Static routes /s/about, /s/brand, /s/tags, /s/recent
+  # are theme files under statics/ and do not require seed pages.
   template_name: "index"
   settings:
-    title: "Latest posts"
-    description: "Blog posts, news, and announcements in one place.<br class=\"hidden sm:inline\"/>Stay on top of what matters."
+    title: "Stories, updates, and ideas worth sharing"
+    description: "A lightweight blog and content site built with Baklib. Explore articles, browse by tag, and stay up to date."
+    hero_image_url: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80"
 
-  # Sample articles
   children:
+  # --- Featured / how-to ---
     - name: "How to write a strong post: structure and checklist"
       slug: "how-to-write-a-good-post"
       template_name: "page"
       settings:
         title: "How to write a strong post: structure and checklist"
         description: "From headline to body—a practical structure and checklist for blog and news content."
-        tags: ["Blog"]
-        thumb_image_url: "images/theme/page.png"
+        tags: ["Blog", "Tutorial"]
+        thumb_image_url: "https://images.unsplash.com/photo-1456324502043-53da872de83e?w=800&q=80"
         content: |
           <h2>Suggested structure</h2>
           <ol>
@@ -32,6 +34,50 @@ pages:
             <li>Is it easy to find later (tags, summary, cover image)?</li>
           </ul>
 
+    - name: "Getting started with the Baklib Blog theme"
+      slug: "getting-started-baklib-blog-theme"
+      template_name: "page"
+      settings:
+        title: "Getting started with the Baklib Blog theme"
+        description: "Install the theme, apply seeds, pick a home layout, and publish your first article."
+        tags: ["Blog", "Tutorial"]
+        thumb_image_url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+        content: |
+          <h2>Quick start</h2>
+          <ol>
+            <li>Create a CMS site and select the <strong>blog</strong> theme from the marketplace.</li>
+            <li>Apply theme seeds (or copy values from <code>seeds/</code>) for menus, hero copy, and sample posts.</li>
+            <li>Create site tags in admin—match names used on articles (e.g. Blog, News, Announcement).</li>
+            <li>Choose home layout: <code>index</code> (card grid + sort) or <code>index.list</code> (list + inline search).</li>
+          </ol>
+
+          <h2>Helpful static pages</h2>
+          <ul>
+            <li><a href="/s/about">Theme guide</a> — overview for editors and developers</li>
+            <li><a href="/s/brand">Brand guidelines</a> — colors, radius, and components</li>
+            <li><a href="/s/tags">All tags</a> — browse every tag on one page</li>
+            <li><a href="/s/recent">Recent updates</a> — latest posts in list form</li>
+          </ul>
+
+    - name: "Five tips for tagging your content"
+      slug: "five-tips-for-tagging-content"
+      template_name: "page"
+      settings:
+        title: "Five tips for tagging your content"
+        description: "Keep taxonomy simple, consistent, and useful for readers and search."
+        tags: ["Blog", "Tutorial"]
+        thumb_image_url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+        content: |
+          <h2>Principles</h2>
+          <ul>
+            <li><strong>Fewer is better</strong> — aim for 5–12 site tags, not dozens.</li>
+            <li><strong>One primary intent</strong> — Blog vs News vs Announcement should mean different things to your team.</li>
+            <li><strong>Match navigation</strong> — if the home toolbar lists a tag, keep that tag active on new posts.</li>
+            <li><strong>Reuse names</strong> — pick exact spellings once; avoid “Release” and “Releases” as separate tags.</li>
+            <li><strong>Review quarterly</strong> — merge or retire tags that no longer get clicks.</li>
+          </ul>
+
+  # --- News ---
     - name: "News: new content channels are live"
       slug: "news-new-content-channels"
       template_name: "page"
@@ -39,7 +85,7 @@ pages:
         title: "News: new content channels are live"
         description: "Dedicated channels for News, Announcements, and Blog—clearer taxonomy and a smoother read."
         tags: ["News", "Announcement"]
-        thumb_image_url: "images/theme/index-list.png"
+        thumb_image_url: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80"
         content: |
           <h2>What changed</h2>
           <ul>
@@ -55,6 +101,25 @@ pages:
             <li>Turn playbooks and long-form tips into <strong>Blog</strong> articles</li>
           </ul>
 
+    - name: "Product update: faster search and clearer results"
+      slug: "product-update-faster-search"
+      template_name: "page"
+      settings:
+        title: "Product update: faster search and clearer results"
+        description: "Site search now highlights matches in titles and summaries, with improved relevance on mobile."
+        tags: ["News"]
+        thumb_image_url: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80"
+        content: |
+          <h2>Highlights</h2>
+          <ul>
+            <li>Search responses feel snappier on large sites</li>
+            <li>Result snippets show where keywords matched</li>
+            <li>Keyboard-friendly focus states on the search field (list home layout)</li>
+          </ul>
+
+          <p>Try it from the home page when using the <strong>list</strong> home template, or open the dedicated search template from your site navigation.</p>
+
+  # --- Announcements & notices ---
     - name: "Announcement: holiday support hours"
       slug: "announcement-holiday-support-hours"
       template_name: "page"
@@ -62,10 +127,10 @@ pages:
         title: "Announcement: holiday support hours"
         description: "Live chat and ticket response hours during public holidays."
         tags: ["Announcement", "Notice"]
-        thumb_image_url: "images/theme/release-guide.png"
+        thumb_image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
         content: |
           <h2>Support hours</h2>
-          <p>During holidays, online support hours will be <strong>10:00 – 18:00</strong>.</p>
+          <p>During holidays, online support hours will be <strong>10:00 – 18:00</strong> (local time).</p>
 
           <h2>Impact</h2>
           <ul>
@@ -76,3 +141,105 @@ pages:
 
           <h2>Contact</h2>
           <p>For emergencies, reach us via the site footer or submit a ticket.</p>
+
+    - name: "Notice: scheduled maintenance window"
+      slug: "notice-scheduled-maintenance"
+      template_name: "page"
+      settings:
+        title: "Notice: scheduled maintenance window"
+        description: "Brief read-only period this Sunday 02:00–04:00 UTC for infrastructure upgrades."
+        tags: ["Notice", "Announcement"]
+        thumb_image_url: "images/logo.png"
+        content: |
+          <h2>When</h2>
+          <p>Sunday, <strong>02:00 – 04:00 UTC</strong>. Publishing and admin edits may be unavailable; public pages stay online.</p>
+
+          <h2>What to expect</h2>
+          <ul>
+            <li>No data loss — maintenance is rolling and rehearsed</li>
+            <li>Search may return partial results for a few minutes</li>
+            <li>Status updates posted here if the window extends</li>
+          </ul>
+
+  # --- Long-form / case study ---
+    - name: "Case study: migrating a marketing blog to Baklib"
+      slug: "case-study-migrating-marketing-blog"
+      template_name: "page"
+      settings:
+        title: "Case study: migrating a marketing blog to Baklib"
+        description: "How a B2B team moved 120 posts, preserved URLs, and cut publish time in half."
+        tags: ["Blog"]
+        thumb_image_url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+        content: |
+          <h2>Challenge</h2>
+          <p>The team outgrew a rigid CMS: slow previews, weak tagging, and no version history on articles.</p>
+
+          <h2>Approach</h2>
+          <ol>
+            <li>Imported Markdown/HTML in batches with slug redirects</li>
+            <li>Standardized tags (Blog, News, Announcement) before go-live</li>
+            <li>Trained editors on the Page template and card home layout</li>
+          </ol>
+
+          <h2>Outcome</h2>
+          <ul>
+            <li>Median time-to-publish dropped from 45 to 20 minutes</li>
+            <li>Tag archive pages became the top non-home entry points</li>
+            <li>Feedback widget collected actionable reader notes on key posts</li>
+          </ul>
+
+  # --- Series parent (child cards on article page) ---
+    - name: "Editorial series: content operations playbook"
+      slug: "content-operations-playbook"
+      template_name: "page"
+      settings:
+        title: "Editorial series: content operations playbook"
+        description: "A three-part mini-series on planning, publishing, and measuring content for small teams."
+        tags: ["Blog", "Tutorial"]
+        thumb_image_url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+        content: |
+          <p>This series walks through a lightweight editorial workflow you can run without a dedicated content ops team. Each part is a short article linked below.</p>
+      children:
+        - name: "Part 1 — Plan a sustainable editorial calendar"
+          slug: "content-ops-part-1-calendar"
+          template_name: "page"
+          settings:
+            title: "Part 1 — Plan a sustainable editorial calendar"
+            description: "Set cadence, themes, and owners before you worry about tools."
+            tags: ["Blog", "Tutorial"]
+            thumb_image_url: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=800&q=80"
+            content: |
+              <p>Start with <strong>one primary channel</strong> (blog OR news) and a realistic cadence—weekly beats daily if you cannot sustain quality.</p>
+              <ul>
+                <li>Block 30 minutes every Monday to pick topics</li>
+                <li>Keep a shared backlog tagged by intent (Blog / News / Announcement)</li>
+                <li>Ship small posts; bundle big launches into a single News item</li>
+              </ul>
+
+        - name: "Part 2 — Publish with review and rollback"
+          slug: "content-ops-part-2-publish"
+          template_name: "page"
+          settings:
+            title: "Part 2 — Publish with review and rollback"
+            description: "Use drafts, previews, and version links so fixes are low-stress."
+            tags: ["Blog", "Tutorial"]
+            thumb_image_url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80"
+            content: |
+              <p>Before announcing widely, preview on mobile and verify tags, cover image, and summary. The article template exposes version links when you maintain named versions.</p>
+              <p>After publish, watch visit counts (if enabled) and feedback for the first 48 hours—quick typo fixes build trust.</p>
+
+        - name: "Part 3 — Measure what readers actually use"
+          slug: "content-ops-part-3-measure"
+          template_name: "page"
+          settings:
+            title: "Part 3 — Measure what readers actually use"
+            description: "Tags, search queries, and feedback beat vanity page views."
+            tags: ["Blog", "Tutorial"]
+            thumb_image_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+            content: |
+              <ul>
+                <li>Which tag archives get the most entries from home?</li>
+                <li>Do list-layout readers search more than card-layout readers?</li>
+                <li>What feedback themes repeat on tutorial posts?</li>
+              </ul>
+              <p>Adjust taxonomy and home layout quarterly based on answers—not guesses.</p>

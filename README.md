@@ -75,8 +75,8 @@ Use a browser LiveReload extension alongside Guard if you want automatic refresh
 
 ## Seeds and first-time content
 
-- `seeds/001_site.yml` — site language (`en` by default), header/footer HTML snippets.
-- `seeds/002_pages.yml` — home copy and three demo articles.
+- `seeds/001_site.yml` — site language (`en` by default), logo, header/footer HTML snippets.
+- `seeds/002_pages.yml` — home hero, ten demo articles (plus a three-part series), varied tags.
 
 **Site tags** (`site.tags`) are not defined inside `settings_schema.json`. Create them with the Baklib API or admin, then attach tags to pages via each template’s tag picker. See [API docs](https://dev.baklib.cn/api) and [Liquid objects](https://dev.baklib.cn/guide/objects).
 
