@@ -62,6 +62,10 @@
   "generic": {
     "name": "일반 설정",
     "settings": {
+      "logo_url": {
+        "label": "로고 아이콘",
+        "info": "권장 비율 4:1의 PNG/SVG 형식 이미지"
+      },
       "is_allow_feedback": {
         "label": "사용자 피드백 표시"
       },

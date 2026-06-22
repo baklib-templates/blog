@@ -1,8 +1,6 @@
 site:
   language: "en"
   settings:
-    # Site logo (theme asset: assets/images/logo.png)
-    logo_url: "images/logo.png"
 
     # Feedback form and visit count (defaults match settings_schema.json)
     is_allow_feedback: true

@@ -25,7 +25,11 @@
     --color-error: hsl(var(--theme-color-error));
     --color-error-content: hsl(var(--theme-color-error-content));
 
-    --header-height: {{ site.settings.header_height.value | presence | default: '68px' }};
+    {% if site.settings.is_allow_header %}
+      --header-height: {{ site.settings.header_height.value | presence | default: '68px' }};
+    {% else %}
+      --header-height: 0px;
+    {% endif %}
   }
 
   :root:has(input.theme-controller[value=dark]:checked),

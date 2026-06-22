@@ -62,6 +62,10 @@
   "generic": {
     "name": "一般設定",
     "settings": {
+      "logo_url": {
+        "label": "ロゴアイコン",
+        "info": "推奨比率 4:1 の PNG/SVG 形式画像"
+      },
       "is_allow_feedback": {
         "label": "ユーザーフィードバックを表示"
       },

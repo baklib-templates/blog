@@ -59,6 +59,10 @@
   "generic": {
     "name": "通用設置",
     "settings": {
+      "logo_url": {
+        "label": "Logo圖片",
+        "info": "建議 4:1 尺寸的 PNG/SVG 格式圖片"
+      },
       "is_allow_feedback": {
         "label": "是否展示用戶反饋"
       },
