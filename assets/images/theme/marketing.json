@@ -1,0 +1,36 @@
+{
+  "copy": {
+    "en": {
+      "title": "Blog",
+      "subtitle": "A small CMS for building content sites with blog posts, news updates, and announcements.",
+      "keywords": ["Blog posts", "News updates", "Announcements"]
+    },
+    "zh-CN": {
+      "title": "博客",
+      "subtitle": "小型 CMS 内容管理系统，用于构建博客文章、新闻动态、通知公告等内容站点。",
+      "keywords": ["博客文章", "新闻动态", "通知公告"]
+    }
+  },
+  "keywords": {
+    "en": ["Blog posts", "News updates", "Announcements"],
+    "zh-CN": ["博客文章", "新闻动态", "通知公告"]
+  },
+  "cover": {
+    "gradient_left": [[242, 252, 249], [224, 242, 235]],
+    "gradient_right": [[255, 248, 242], [248, 232, 220]],
+    "blob_palette": [
+      [13, 148, 136],
+      [20, 184, 166],
+      [45, 212, 191],
+      [234, 88, 12],
+      [251, 146, 60],
+      [253, 186, 116]
+    ],
+    "liquid_glass": {
+      "blobs": 6,
+      "blob_alpha": 30,
+      "blob_blur": 120,
+      "grain_amount": 0.025
+    }
+  }
+}
