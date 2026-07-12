@@ -1,0 +1,27 @@
+<form action="{{ collection.submit_url }}" method="post" class="space-y-4">
+  <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}" />
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.registration.name_label' | t }}</legend>
+    <input type="text" name="data[name]" required class="w-full input" placeholder="{{ 'forms.registration.name_placeholder' | t }}" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.registration.contact_label' | t }}</legend>
+    <input type="text" name="data[contact]" required class="w-full input" placeholder="{{ 'forms.registration.contact_placeholder' | t }}" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.registration.people_count_label' | t }}</legend>
+    <input type="number" name="data[people_count]" min="1" max="100" value="1" class="w-full input" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.registration.remark_label' | t }}</legend>
+    <textarea name="data[remark]" class="w-full h-24 textarea" placeholder="{{ 'forms.registration.remark_placeholder' | t }}"></textarea>
+  </fieldset>
+
+  <div class="flex items-center justify-between pt-2">
+    <button type="submit" class="btn btn-primary">{{ collection.submit_text | default: 'forms.registration.submit' | t }}</button>
+  </div>
+</form>

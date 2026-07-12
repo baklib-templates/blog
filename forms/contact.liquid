@@ -1,0 +1,23 @@
+{% assign fields = collection.fields | default: '' %}
+<form action="{{ collection.submit_url }}" method="post" data-turbo="{{ collection.response_format | default: 'true' }}" class="space-y-4">
+  <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}" />
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.contact.name_label' | t }}</legend>
+    <input type="text" name="data[name]" required class="w-full input" placeholder="{{ 'forms.contact.name_placeholder' | t }}" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.contact.email_label' | t }}</legend>
+    <input type="email" name="data[email]" required class="w-full input" placeholder="{{ 'forms.contact.email_placeholder' | t }}" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.contact.message_label' | t }}</legend>
+    <textarea name="data[message]" required class="w-full h-32 textarea" placeholder="{{ 'forms.contact.message_placeholder' | t }}"></textarea>
+  </fieldset>
+
+  <div class="flex items-center justify-between pt-2">
+    <button type="submit" class="btn btn-primary">{{ collection.submit_text | default: 'forms.contact.submit' | t }}</button>
+  </div>
+</form>

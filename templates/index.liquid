@@ -33,6 +33,15 @@
         </div>
       {% endif %}
     {% endpaginate_tag %}
+
+    {% comment %} 联系表单区域 - 通过 FormCollection 功能嵌入 {% endcomment %}
+    <section class="page-container py-14 border-t border-base-300 mt-14">
+      <div class="mx-auto max-w-lg">
+        <h2 class="text-2xl font-semibold text-center text-accent mb-2">{{ 'forms.contact.section_title' | t }}</h2>
+        <p class="text-sm text-center text-base-content/70 mb-8">{{ 'forms.contact.section_description' | t }}</p>
+        {% form_collection "contact" %}
+      </div>
+    </section>
   </div>
 </div>
 

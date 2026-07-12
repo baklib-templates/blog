@@ -1,0 +1,30 @@
+<form action="{{ collection.submit_url }}" method="post" class="space-y-6">
+  <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}" />
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.survey.satisfaction_label' | t }}</legend>
+    <div class="flex flex-wrap gap-3">
+      <label class="inline-flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="data[satisfaction]" value="非常满意" class="radio" /> <span>非常满意</span>
+      </label>
+      <label class="inline-flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="data[satisfaction]" value="满意" class="radio" /> <span>满意</span>
+      </label>
+      <label class="inline-flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="data[satisfaction]" value="一般" class="radio" /> <span>一般</span>
+      </label>
+      <label class="inline-flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="data[satisfaction]" value="不满意" class="radio" /> <span>不满意</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.survey.comment_label' | t }}</legend>
+    <textarea name="data[comment]" class="w-full h-24 textarea" placeholder="{{ 'forms.survey.comment_placeholder' | t }}"></textarea>
+  </fieldset>
+
+  <div class="flex items-center justify-between pt-2">
+    <button type="submit" class="btn btn-primary">{{ collection.submit_text | default: 'forms.survey.submit' | t }}</button>
+  </div>
+</form>

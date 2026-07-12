@@ -1,4 +1,48 @@
 {
+  "forms": {
+    "contact": {
+      "section_title": "联系我们",
+      "section_description": "有任何问题或建议？欢迎通过以下表单与我们联系",
+      "name_label": "姓名",
+      "name_placeholder": "请输入您的姓名",
+      "email_label": "邮箱",
+      "email_placeholder": "请输入您的邮箱",
+      "message_label": "留言内容",
+      "message_placeholder": "请输入留言内容",
+      "submit": "提交留言"
+    },
+    "subscribe": {
+      "description": "订阅我们的新闻通讯，获取最新更新",
+      "email_label": "邮箱",
+      "email_placeholder": "请输入您的邮箱",
+      "submit": "订阅"
+    },
+    "survey": {
+      "satisfaction_label": "您对我们的服务满意吗？",
+      "comment_label": "您的意见",
+      "comment_placeholder": "请告诉我们您的想法",
+      "submit": "提交问卷"
+    },
+    "registration": {
+      "name_label": "姓名",
+      "name_placeholder": "请输入您的姓名",
+      "contact_label": "联系方式",
+      "contact_placeholder": "手机号或微信号",
+      "people_count_label": "参加人数",
+      "remark_label": "备注",
+      "remark_placeholder": "如有特殊需求请在此说明",
+      "submit": "立即报名"
+    },
+    "requirement": {
+      "title": "功能需求建议",
+      "description": "告诉我们您期望的功能，我们将认真考虑",
+      "feature_label": "功能名称",
+      "feature_placeholder": "请描述您期望的功能",
+      "detail_label": "详细说明",
+      "detail_placeholder": "请详细描述使用场景和期望效果",
+      "submit": "提交建议"
+    }
+  },
   "snippets": {
     "feedback_form": {
       "title": "提交反馈",

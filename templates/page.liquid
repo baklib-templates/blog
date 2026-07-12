@@ -92,6 +92,13 @@
     <section class="mx-auto mt-14 max-w-4xl border-t border-base-300 pt-10">
       {% render 'feedback_button', page: page %}
     </section>
+
+    {% comment %} 需求收集 - 通过 FormCollection 功能嵌入 {% endcomment %}
+    <section class="mx-auto mt-10 max-w-4xl border-t border-base-300 pt-10">
+      <div class="mx-auto max-w-md">
+        {% form_collection "requirement" %}
+      </div>
+    </section>
   </div>
 </div>
 

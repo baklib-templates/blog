@@ -1,4 +1,48 @@
 {
+  "forms": {
+    "contact": {
+      "section_title": "Contact Us",
+      "section_description": "Have questions or suggestions? Contact us through the form below",
+      "name_label": "Name",
+      "name_placeholder": "Enter your name",
+      "email_label": "Email",
+      "email_placeholder": "Enter your email",
+      "message_label": "Message",
+      "message_placeholder": "Enter your message",
+      "submit": "Send Message"
+    },
+    "subscribe": {
+      "description": "Subscribe to our newsletter for the latest updates",
+      "email_label": "Email",
+      "email_placeholder": "Enter your email",
+      "submit": "Subscribe"
+    },
+    "survey": {
+      "satisfaction_label": "How satisfied are you with our service?",
+      "comment_label": "Your feedback",
+      "comment_placeholder": "Tell us what you think",
+      "submit": "Submit Survey"
+    },
+    "registration": {
+      "name_label": "Name",
+      "name_placeholder": "Enter your name",
+      "contact_label": "Contact",
+      "contact_placeholder": "Phone or WeChat",
+      "people_count_label": "Number of attendees",
+      "remark_label": "Remark",
+      "remark_placeholder": "Any special requirements",
+      "submit": "Register Now"
+    },
+    "requirement": {
+      "title": "Feature Request",
+      "description": "Tell us the features you want, we will consider carefully",
+      "feature_label": "Feature name",
+      "feature_placeholder": "Describe the feature you want",
+      "detail_label": "Details",
+      "detail_placeholder": "Describe the use case and expected effect",
+      "submit": "Submit Request"
+    }
+  },
   "snippets": {
     "feedback_form": {
       "title": "Submit Feedback",

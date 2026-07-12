@@ -1,0 +1,20 @@
+<form action="{{ collection.submit_url }}" method="post" class="space-y-4">
+  <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}" />
+
+  <p class="text-sm font-medium text-accent">{{ 'forms.requirement.title' | t }}</p>
+  <p class="text-xs text-base-content/70">{{ 'forms.requirement.description' | t }}</p>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.requirement.feature_label' | t }}</legend>
+    <input type="text" name="data[feature]" required class="w-full input" placeholder="{{ 'forms.requirement.feature_placeholder' | t }}" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ 'forms.requirement.detail_label' | t }}</legend>
+    <textarea name="data[detail]" class="w-full h-24 textarea" placeholder="{{ 'forms.requirement.detail_placeholder' | t }}"></textarea>
+  </fieldset>
+
+  <div class="flex items-center justify-between pt-2">
+    <button type="submit" class="btn btn-primary">{{ collection.submit_text | default: 'forms.requirement.submit' | t }}</button>
+  </div>
+</form>
